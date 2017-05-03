@@ -1,0 +1,5 @@
+2017-03-29 17:07:02,504 - org.springframework.jdbc.IncorrectResultSetColumnCountException: Incorrect column count: expected 1, actual 2
+2017-03-29 17:07:47,052 - org.springframework.jdbc.IncorrectResultSetColumnCountException: Incorrect column count: expected 1, actual 2
+2017-03-29 17:07:48,202 - org.springframework.jdbc.IncorrectResultSetColumnCountException: Incorrect column count: expected 1, actual 2
+2017-03-29 17:39:40,476 - org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [insert into XringBlockAccount values(?)]; 不能在具有唯一索引“un_acc_index”的对象“dbo.XringBlockAccount”中插入重复键行。重复键值为 (TEST)。; nested exception is com.microsoft.sqlserver.jdbc.SQLServerException: 不能在具有唯一索引“un_acc_index”的对象“dbo.XringBlockAccount”中插入重复键行。重复键值为 (TEST)。
+2017-03-29 17:41:57,248 - org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [insert into XringBlockAccount values(?)]; 不能在具有唯一索引“un_acc_index”的对象“dbo.XringBlockAccount”中插入重复键行。重复键值为 (TEST)。; nested exception is com.microsoft.sqlserver.jdbc.SQLServerException: 不能在具有唯一索引“un_acc_index”的对象“dbo.XringBlockAccount”中插入重复键行。重复键值为 (TEST)。

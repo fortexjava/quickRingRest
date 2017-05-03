@@ -1,0 +1,26 @@
+2017-03-31 16:05:56,300 - Kick userPERFIXQUOTE01success
+2017-03-31 16:08:09,325 - Block account list loaded
+2017-03-31 16:13:35,831 - Block account added (bkbk)
+2017-03-31 16:13:38,114 - org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [insert into XringBlockAccount values(?)]; 不能在具有唯一索引“un_acc_index”的对象“dbo.XringBlockAccount”中插入重复键行。重复键值为 (bkbk)。; nested exception is java.sql.SQLException: 不能在具有唯一索引“un_acc_index”的对象“dbo.XringBlockAccount”中插入重复键行。重复键值为 (bkbk)。
+2017-03-31 16:13:48,290 - Block account list loaded
+2017-03-31 16:15:10,198 - org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [insert into XringBlockAccount values(?)]; 不能在具有唯一索引“un_acc_index”的对象“dbo.XringBlockAccount”中插入重复键行。重复键值为 (bkbk)。; nested exception is java.sql.SQLException: 不能在具有唯一索引“un_acc_index”的对象“dbo.XringBlockAccount”中插入重复键行。重复键值为 (bkbk)。
+2017-03-31 16:15:12,595 - Block account removed (bkbk)
+2017-03-31 16:15:14,871 - Block account list loaded
+2017-03-31 16:15:17,580 - Block account added (bkbk)
+2017-03-31 16:15:18,401 - Block account list loaded
+2017-03-31 16:15:20,042 - Block account removed (bkbk)
+2017-03-31 16:18:35,468 - Load trade initiator setting successfully
+2017-03-31 16:18:44,959 - Load trade acceptor setting successfully
+2017-03-31 16:18:49,177 - Save trade acceptor setting successfully
+2017-03-31 16:18:50,964 - Load trade acceptor setting successfully
+2017-03-31 16:19:00,458 - Load server status
+2017-03-31 16:19:02,857 - Load online users
+2017-03-31 16:19:06,078 - Kick userPERFIXQUOTE01success
+2017-03-31 16:19:14,827 - Block account list loaded
+2017-03-31 16:20:14,502 - Load trade acceptor setting successfully
+2017-03-31 16:30:15,910 - Block account list loaded
+2017-03-31 16:34:08,464 - Block account added (ATES)
+2017-03-31 16:34:11,484 - Block account list loaded
+2017-03-31 16:34:15,089 - Block account added (ATESfs)
+2017-03-31 16:34:16,520 - Block account list loaded
+2017-03-31 16:34:18,074 - Block account removed (ATESfs)

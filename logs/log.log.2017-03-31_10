@@ -1,0 +1,7 @@
+2017-03-31 10:03:17,262 - org.apache.mina.core.RuntimeIoException: Failed to get the session.
+2017-03-31 10:04:14,019 - org.apache.mina.core.RuntimeIoException: Failed to get the session.
+2017-03-31 10:41:23,118 - org.apache.mina.core.RuntimeIoException: Failed to get the session.
+2017-03-31 10:41:42,741 - org.apache.mina.core.RuntimeIoException: Failed to get the session.
+2017-03-31 10:43:12,933 - org.apache.mina.core.RuntimeIoException: Failed to get the session.
+2017-03-31 10:43:38,875 - org.apache.mina.core.RuntimeIoException: Failed to get the session.
+2017-03-31 10:57:29,324 - org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is java.sql.SQLException: Driver:jTDS 1.2.4 returned null for URL:jdbc:sqlserver://192.1.2.117:55398;DatabaseName=openex

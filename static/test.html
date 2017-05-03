@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../js/jquery-1.4.4.min.js"></script>
+</head>
+
+<script>
+var weburl = 'https://127.0.0.1:8082';
+
+function quoteInitiatorSave(){	
+	var obj = {
+			fqsUserName:"TFIXQUOTE012",
+        	fqsPassword:"TEST12342",
+        	socketConnectHost:"192.1.2.112",
+        	socketConnectPort:"29992",
+        	senderCompId:"TFIXQUOTE02",
+        	targetCompId:"FORTEX_FQS2"
+	};
+	
+	 $.ajax({
+	        url: weburl + '/quote/initiatorSaveSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",
+	        data: JSON.stringify(obj),	        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("update success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+function quoteInitiatorLoad(){		
+	
+	 $.ajax({
+	        url: weburl + '/quote/initiatorLoadSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	 
+	        	if(resp.error==""){
+	             	var data = resp.data;
+	             	console.log(data.fqsUserName);
+	             	console.log(data.fqsPassword);
+	             	console.log(data.socketConnectHost);
+	             	console.log(data.socketConnectPort);
+	             	console.log(data.senderCompId);
+	             	console.log(data.targetCompId);
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+function quoteAcceptorLoad(){			
+	 $.ajax({
+	        url: weburl + '/quote/acceptorLoadSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	 
+	        	if(resp.error==""){
+	             	var data = resp.data;	             	
+	             	console.log(data.senderCompId);
+	             	console.log(data.targetCompId);
+	             	console.log(data.socketAcceptPort);	             	
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+function quoteAcceptorSave(){	
+	var obj = {			
+			senderCompId:"Fortex_F",
+        	targetCompId:"*",
+        	socketAcceptPort:"28851"        	
+	};
+	
+	 $.ajax({
+	        url: weburl + '/quote/acceptorSaveSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",
+	        data: JSON.stringify(obj),	        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("update success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+function qmLoadSetting(){
+	 $.ajax({
+	        url: weburl + '/quote/qmLoadSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	 
+	        	if(resp.error==""){
+	             	var data = resp.data;	             	
+	             	console.log(data.senderId);
+	             	console.log(data.ip);
+	             	console.log(data.port);
+	             	console.log(data.username);
+	             	console.log(data.password);
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+
+function qmSaveSetting(){	
+	var obj = {			
+			senderId:"FORTEX_NWS2",
+			ip:"192.1.2.112",
+			port:"10012",
+			username:"TFIXNWS02",
+			password:"TEST1232",
+	};
+	
+	 $.ajax({
+	        url: weburl + '/quote/qmSaveSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",
+	        data: JSON.stringify(obj),	        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("update success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+
+function dbQuoteLoadSetting(){
+	 $.ajax({
+	        url: weburl + '/server/dbQuoteLoadSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	 
+	        	if(resp.error==""){
+	             	var data = resp.data;	             	
+	             	console.log(data.url);
+	             	console.log(data.username);
+	             	console.log(data.password);
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+
+function dbQuoteSaveSetting(){	
+	var obj = {			
+			url:"jdbc:jtds:sqlserver://192.1.2.117:55398;DatabaseName=openex2",
+			username:"appusers2",
+			password:"ctapp2"
+	};
+	
+	 $.ajax({
+	        url: weburl + '/server/dbQuoteSaveSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",
+	        data: JSON.stringify(obj),	        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("update success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+
+function dbTradeLoadSetting(){
+	 $.ajax({
+	        url: weburl + '/server/dbTradeLoadSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	 
+	        	if(resp.error==""){
+	             	var data = resp.data;	             	
+	             	console.log(data.url);
+	             	console.log(data.username);
+	             	console.log(data.password);
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+
+function dbTradeSaveSetting(){	
+	var obj = {			
+			url:"jdbc:jtds:sqlserver://192.1.2.117:55398;DatabaseName=openex2",
+			username:"appusers2",
+			password:"ctapp2"
+	};
+	
+	 $.ajax({
+	        url: weburl + '/server/dbTradeSaveSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",
+	        data: JSON.stringify(obj),	        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("update success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+
+function quoteInitiatorLoadLogSetting(){
+	$.ajax({
+        url: weburl + '/quote/initiatorLoadLogSetting', 
+        type: 'POST',
+        async: true,	        
+        dataType: 'json',
+        contentType:"application/json",        
+        timeout: 3000,	        	        
+        beforeSend: function (xhr) {
+
+        },
+        success: function (resp, textStatus, jqXHR) {	 
+        	if(resp.error==""){
+             	var data = resp.data;	             	
+             	console.log(data.logIncomingMsg);
+             	console.log(data.logOutgoingMsg);
+             	console.log(data.logHeartBeatMsg);
+             	console.log(data.logAdminMsg);
+        	}
+        	else{
+        		console.log(resp.error);
+        	}
+        },
+        error: function (xhr, textStatus) {
+
+        },
+        complete: function () {
+
+        }
+    })
+}
+
+function quoteInitiatorSaveLogSetting(){	
+	var obj = {			
+			logIncomingMsg:"Y",
+			logOutgoingMsg:"Y",
+			logHeartBeatMsg:"N",
+			logAdminMsg:"N"
+	};
+	
+	 $.ajax({
+	        url: weburl + '/quote/initiatorSaveLogSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",
+	        data: JSON.stringify(obj),	        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("update success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+
+function quoteAcceptorLoadLogSetting(){
+	$.ajax({
+        url: weburl + '/quote/acceptorLoadLogSetting', 
+        type: 'POST',
+        async: true,	        
+        dataType: 'json',
+        contentType:"application/json",        
+        timeout: 3000,	        	        
+        beforeSend: function (xhr) {
+
+        },
+        success: function (resp, textStatus, jqXHR) {	 
+        	if(resp.error==""){
+             	var data = resp.data;	             	
+             	console.log(data.logIncomingMsg);
+             	console.log(data.logOutgoingMsg);
+             	console.log(data.logHeartBeatMsg);
+             	console.log(data.logAdminMsg);
+        	}
+        	else{
+        		console.log(resp.error);
+        	}
+        },
+        error: function (xhr, textStatus) {
+
+        },
+        complete: function () {
+
+        }
+    })
+}
+
+function quoteAcceptorSaveLogSetting(){	
+	var obj = {			
+			logIncomingMsg:"Y",
+			logOutgoingMsg:"Y",
+			logHeartBeatMsg:"N",
+			logAdminMsg:"N"
+	};
+	
+	 $.ajax({
+	        url: weburl + '/quote/acceptorSaveLogSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",
+	        data: JSON.stringify(obj),	        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("update success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+
+
+
+function tradeInitiatorSave(){	
+	var obj = {
+			ftsUserName:"TFIXTRADE13",
+        	ftsPassword:"TEST12343",
+        	socketConnectHost:"192.1.2.113",
+        	socketConnectPort:"29993",
+        	senderCompId:"TFIXTRADE03",
+        	targetCompId:"FORTEX_FTS3"
+	};
+	
+	 $.ajax({
+	        url: weburl + '/trade/initiatorSaveSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",
+	        data: JSON.stringify(obj),	        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("update success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+function tradeInitiatorLoad(){		
+	
+	 $.ajax({
+	        url: weburl + '/trade/initiatorLoadSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	 
+	        	if(resp.error==""){
+	             	var data = resp.data;
+	             	console.log(data.ftsUserName);
+	             	console.log(data.ftsPassword);
+	             	console.log(data.socketConnectHost);
+	             	console.log(data.socketConnectPort);
+	             	console.log(data.senderCompId);
+	             	console.log(data.targetCompId);
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+function tradeAcceptorLoad(){			
+	 $.ajax({
+	        url: weburl + '/trade/acceptorLoadSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	 
+	        	if(resp.error==""){
+	             	var data = resp.data;	             	
+	             	console.log(data.senderCompId);
+	             	console.log(data.targetCompId);
+	             	console.log(data.socketAcceptPort);
+	             	console.log(data.pendingOrderCount);
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+function tradeAcceptorSave(){	
+	var obj = {			
+			senderCompId:"Fortex_T",
+        	targetCompId:"*",
+        	socketAcceptPort:"28833",
+        	pendingOrderCount:50
+	};
+	
+	 $.ajax({
+	        url: weburl + '/trade/acceptorSaveSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",
+	        data: JSON.stringify(obj),	        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("update success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+
+
+
+function tradeInitiatorLoadLogSetting(){
+	$.ajax({
+        url: weburl + '/trade/initiatorLoadLogSetting', 
+        type: 'POST',
+        async: true,	        
+        dataType: 'json',
+        contentType:"application/json",        
+        timeout: 3000,	        	        
+        beforeSend: function (xhr) {
+
+        },
+        success: function (resp, textStatus, jqXHR) {	 
+        	if(resp.error==""){
+             	var data = resp.data;	             	
+             	console.log(data.logIncomingMsg);
+             	console.log(data.logOutgoingMsg);
+             	console.log(data.logHeartBeatMsg);
+             	console.log(data.logAdminMsg);
+        	}
+        	else{
+        		console.log(resp.error);
+        	}
+        },
+        error: function (xhr, textStatus) {
+
+        },
+        complete: function () {
+
+        }
+    })
+}
+
+function tradeInitiatorSaveLogSetting(){	
+	var obj = {			
+			logIncomingMsg:"Y",
+			logOutgoingMsg:"Y",
+			logHeartBeatMsg:"N",
+			logAdminMsg:"N"
+	};
+	
+	 $.ajax({
+	        url: weburl + '/trade/initiatorSaveLogSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",
+	        data: JSON.stringify(obj),	        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("update success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+
+function tradeAcceptorLoadLogSetting(){
+	$.ajax({
+        url: weburl + '/trade/acceptorLoadLogSetting', 
+        type: 'POST',
+        async: true,	        
+        dataType: 'json',
+        contentType:"application/json",        
+        timeout: 3000,	        	        
+        beforeSend: function (xhr) {
+
+        },
+        success: function (resp, textStatus, jqXHR) {	 
+        	if(resp.error==""){
+             	var data = resp.data;	             	
+             	console.log(data.logIncomingMsg);
+             	console.log(data.logOutgoingMsg);
+             	console.log(data.logHeartBeatMsg);
+             	console.log(data.logAdminMsg);
+        	}
+        	else{
+        		console.log(resp.error);
+        	}
+        },
+        error: function (xhr, textStatus) {
+
+        },
+        complete: function () {
+
+        }
+    })
+}
+
+function tradeAcceptorSaveLogSetting(){	
+	var obj = {			
+			logIncomingMsg:"Y",
+			logOutgoingMsg:"Y",
+			logHeartBeatMsg:"N",
+			logAdminMsg:"N"
+	};
+	
+	 $.ajax({
+	        url: weburl + '/trade/acceptorSaveLogSetting', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",
+	        data: JSON.stringify(obj),	        
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("update success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+	    })
+}
+
+
+function startQuoteServer(){		 
+	
+	 $.ajax({
+	        url: weburl + '/server/startQuote', 
+	        type: 'GET',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",	               
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("start success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        }
+
+	    })
+}
+
+
+function stopQuoteServer(){		 
+	
+	 $.ajax({
+	        url: weburl + '/server/stopQuote', 
+	        type: 'GET',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",	               
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("stop success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        }
+
+	    })
+}
+
+function startTradeServer(){		 	
+	 $.ajax({
+	        url: weburl + '/server/startTrade', 
+	        type: 'GET',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",	               
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("start success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+
+	    })
+}
+
+function stopTradeServer(){		 
+	
+	 $.ajax({
+	        url: weburl + '/server/stopTrade', 
+	        type: 'GET',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",	               
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("stop success");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+
+	    })
+}
+
+
+function getServerStatus(){		 	
+	 $.ajax({
+	        url: weburl + '/server/serverStatus', 
+	        type: 'GET',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",	               
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){
+	        		console.log("server is running");
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+
+	    })
+}
+
+
+function getOnlineUsers(){		 	
+	 $.ajax({
+	        url: weburl + '/server/onlineUsers', 
+	        type: 'GET',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",	               
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){	        		
+	        		for(var i=0;i<resp.data.userNames.length;i++){
+	        			console.log(resp.data.userNames[i]);
+	        		}
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+
+	    })
+}
+
+
+function kickOnlineUser(){	
+	var obj = {			
+		account:$("#onlineUser").val()			
+	};	
+	 $.ajax({
+	        url: weburl + '/server/kickUser', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        data: JSON.stringify(obj),	  
+	        contentType:"application/json",	               
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){	        			        		
+	        		console.log("kick account successfully");	        		 
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+
+	    })
+}
+
+
+function getBlockAccounts(){		 	
+	 $.ajax({
+	        url: weburl + '/server/blockAccounts', 
+	        type: 'GET',
+	        async: true,	        
+	        dataType: 'json',
+	        contentType:"application/json",	               
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){	        		
+	        		for(var i=0;i<resp.data.blockList.length;i++){
+	        			console.log(resp.data.blockList[i]);
+	        		}
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}
+	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+
+	    })
+}
+
+
+function addBlockAccount(){	
+	var obj = {			
+		account:$("#blockUser").val()			
+	};	
+	 $.ajax({
+	        url: weburl + '/server/blockAccountAdd', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        data: JSON.stringify(obj),	  
+	        contentType:"application/json",	               
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){	        			        		
+	        		console.log("Add block account successfully");	        		 
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+
+	    })
+}
+
+
+function removeBlockAccount(){	
+	var obj = {			
+		account:$("#blockUser").val()			
+	};	
+	 $.ajax({
+	        url: weburl + '/server/blockAccountRemove', 
+	        type: 'POST',
+	        async: true,	        
+	        dataType: 'json',
+	        data: JSON.stringify(obj),	  
+	        contentType:"application/json",	               
+	        timeout: 3000,	        	        
+	        beforeSend: function (xhr) {
+	        },
+	        success: function (resp, textStatus, jqXHR) {	     	        	 
+	        	if(resp.error==""){	        			        		
+	        		console.log("Remove block account successfully");	        		 
+	        	}
+	        	else{
+	        		console.log(resp.error);
+	        	}	        		
+	        },
+	        error: function (xhr, textStatus) {
+
+	        },
+	        complete: function () {
+
+	        }
+
+	    })
+}
+
+</script>
+<body>
+	<input value="XRing connects to FQS(Load)" type="button" onclick="quoteInitiatorLoad()"   />
+	
+	<!-- 
+	<input value="XRing connects to FQS(Save)" type="button" onclick="quoteInitiatorSave()"   />
+	 --> 
+	<br/> <br/>
+	<input value="Client connects to XRing(Load) Quote" type="button" onclick="quoteAcceptorLoad()"   />
+	
+	<!--   
+	<input value="Client connects to XRing(Save) Quote" type="button" onclick="quoteAcceptorSave()"   />
+	  -->
+	 
+	<br/> <br/>
+	<input value="QM connection(Load)" type="button" onclick="qmLoadSetting()"   />
+ 	
+ 	 <!-- 
+	<input value="Client connects to XRing(Save)" type="button" onclick="qmSaveSetting()"   />
+	  -->
+	 
+	<br/> <br/>
+	<input value="Quote databaseSetting(Load)" type="button" onclick="dbQuoteLoadSetting()"   />
+ 
+ 	<!-- 
+	<input value="Quote databaseSetting(Save)" type="button" onclick="dbQuoteSaveSetting()"   />
+	  -->
+	  
+	<br/> <br/>
+	<input value="Trade databaseSetting(Load)" type="button" onclick="dbTradeLoadSetting()"   />
+	 
+	 <!-- 
+	<input value="Trade databaseSetting(Save)" type="button" onclick="dbTradeSaveSetting()"   />	
+	  -->
+	  
+	<br/> <br/>
+	<input value="Initiator Log setting(Load) Quote" type="button" onclick="quoteInitiatorLoadLogSetting()"   />
+	
+ 	<!-- 
+	<input value="Initiator Log setting(Save) Quote" type="button" onclick="quoteInitiatorSaveLogSetting()"   />
+	  -->
+	<br/> <br/>
+	
+	<input value="Acceptor Log setting(Load) Quote" type="button" onclick="quoteAcceptorLoadLogSetting()"   />
+ 	
+ 	<!-- 
+	<input value="Acceptor Log setting(Save) Quote" type="button" onclick="quoteAcceptorSaveLogSetting()"   />
+	  -->
+	<br/> <br/>
+	<input value="XRing connects to FTS(Load)" type="button" onclick="tradeInitiatorLoad()"   />
+	 
+	 <!-- 
+	<input value="XRing connects to FTS(Save)" type="button" onclick="tradeInitiatorSave()"   />
+	  -->
+	<br/> <br/>
+	<input value="Client connects to XRing(Load) Trade" type="button" onclick="tradeAcceptorLoad()"   />
+	
+	 <!-- 
+	<input value="Client connects to XRing(Save) Trade" type="button" onclick="tradeAcceptorSave()"   />
+	  -->
+	
+	
+	<br/> <br/>
+	<input value="Initiator Log setting(Load) Trade" type="button" onclick="tradeInitiatorLoadLogSetting()"   />
+ 
+ 	<!-- 
+	<input value="Initiator Log setting(Save) Trade" type="button" onclick="tradeInitiatorSaveLogSetting()"   />
+	  -->
+	<br/> <br/>
+	<input value="Acceptor Log setting(Load) Trade" type="button" onclick="tradeAcceptorLoadLogSetting()"   />
+	 
+	 <!-- 
+	<input value="Acceptor Log setting(Save) Trade" type="button" onclick="tradeAcceptorSaveLogSetting()"   />
+	  -->
+	<br/> <br/>
+	
+	<input value="Start Quote Server" type="button" onclick="startQuoteServer()"   />
+	 
+	<input value="Stop Quote Server" type="button" onclick="stopQuoteServer()"  />
+	
+	<br/> <br/>
+	<input value="Start Trade Server" type="button" onclick="startTradeServer()"   />
+		 
+	<input value="Stop Trade Server" type="button" onclick="stopTradeServer()"  />
+	 			
+	
+	
+	<br/> <br/>
+	<input value="Server status" type="button" onclick="getServerStatus()"  />
+	
+	
+	<br/> <br/>
+	<input value="Get online users" type="button" onclick="getOnlineUsers()" />	
+	
+	<br/> <br/>
+	<input id="onlineUser" value="PERFIXQUOTE01"/><input value="Kick online user" type="button" onclick="kickOnlineUser()" />
+	
+	<!-- 
+	<br/> <br/>
+	<input value="Get block accounts" type="button" onclick="getBlockAccounts()" />
+		 	
+	<br/> <br/>
+	<input id="blockUser" value=""/><input value="Add block account" type="button" onclick="addBlockAccount()" />
+	<input value="Remove block account" type="button" onclick="removeBlockAccount()" />
+	 -->
+	 	
+</body>
+</html>
